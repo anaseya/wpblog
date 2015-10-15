@@ -1,0 +1,53 @@
+/*--------------------------------------------------------------
+Xcel - Header Standard Styling
+--------------------------------------------------------------*/
+
+.site-header-left {
+    float: left;
+    padding: 10px 0 10px 2px;
+}
+
+.site-header-right {
+    float: right;
+    position: relative;
+    padding: 10px 0 0;
+}
+
+.main-navigation {
+    float: left;
+}
+
+@media only screen and (max-width: 960px) {
+	
+    .site-header-right {
+        position: initial;
+    }
+	.main-navigation {
+        float: right;
+        margin: 0 0 0 8px;
+    }
+    
+}
+
+@media only screen and (max-width: 782px) {
+    
+    .site-header .site-container {
+        position: relative;
+        padding: 0 12px;
+    }
+    .site-header-right {
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    .main-navigation {
+        margin: 0;
+    }
+    .header-menu-button {
+        padding: 19px 16px;
+    }
+    .header-menu-button .fa.fa-bars {
+        font-size: 21px;
+    }
+    
+}
