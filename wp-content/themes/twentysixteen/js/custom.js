@@ -78,39 +78,43 @@ jQuery(document).ready(function($) {
     $("#comsubmit").click(function(event){//todo finish the custom post for comments
 
         event.preventDefault();
-        var commentform=$('form[action$=wp-comments-post.php]');   //- See more at: http://webdeveloperplus.com/wordpress/how-to-ajaxify-wordpress-comment-posting/#sthash.rhlp7liB.dpuf
-        var formdata=commentform.serialize();
-        $.ajax({
-            type: 'POST',
-            url : commentform.attr('action'),
-            cache : false,
-            dataType : "html",
-            data: {
-                action: 'comment_form_ajax',
-                commentform: commentform.serialize()
-            },
-            success: function(response, textStatus, XMLHttpRequest) {
+        alert('here');
 
-                var obj = jQuery.parseJSON(response);
-                if ( obj.status > 0 ) {
-                    $('#ajax9382').html('');
-                    $('#ajax9382').html(obj.page_src);
-                    responseMsg(obj.msg,'success');
-                    resetForm();
-                    readLessMore();
-                }
-                else {
-                    responseMsg(obj.msg,'danger');
-                }
-            },
-            error : function(XMLHttpRequest, ajaxOptions, thrownError) {
-                alert('status Code:' + XMLHttpRequest.status + 'Error Message :'
-                + thrownError);
-            },
-            complete: function(xml, status){
-                 // do something after success or error no matter what
-            }
-        });
+
+        //
+        //var commentform=$('form[action$=wp-comments-post.php]');   //- See more at: http://webdeveloperplus.com/wordpress/how-to-ajaxify-wordpress-comment-posting/#sthash.rhlp7liB.dpuf
+        //var formdata=commentform.serialize();
+        //$.ajax({
+        //    type: 'POST',
+        //    url : commentform.attr('action'),
+        //    cache : false,
+        //    dataType : "html",
+        //    data: {
+        //        action: 'comment_form_ajax',
+        //        commentform: commentform.serialize()
+        //    },
+        //    success: function(response, textStatus, XMLHttpRequest) {
+        //
+        //        var obj = jQuery.parseJSON(response);
+        //        if ( obj.status > 0 ) {
+        //            $('#ajax9382').html('');
+        //            $('#ajax9382').html(obj.page_src);
+        //            responseMsg(obj.msg,'success');
+        //            resetForm();
+        //            readLessMore();
+        //        }
+        //        else {
+        //            responseMsg(obj.msg,'danger');
+        //        }
+        //    },
+        //    error : function(XMLHttpRequest, ajaxOptions, thrownError) {
+        //        alert('status Code:' + XMLHttpRequest.status + 'Error Message :'
+        //        + thrownError);
+        //    },
+        //    complete: function(xml, status){
+        //         // do something after success or error no matter what
+        //    }
+        //});
     })
 
     function readLessMore() {
