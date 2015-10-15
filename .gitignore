@@ -1,5 +1,7 @@
-*.log
-.htaccess
+#*.log
+#*.php
+#Ignore all hidden files.
+#.htaccess
 sitemap.xml
 sitemap.xml.gz
 wp-config.php
@@ -11,7 +13,9 @@ wp-content/cache/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
-wp-content/plugins/hello.php
+wp-content/plugins/
+wp-includes/
+wp-admin/
 
 /readme.html
 /license.txt
