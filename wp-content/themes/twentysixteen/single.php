@@ -23,7 +23,7 @@
                 <div id="comment"><div class="cleared"></div>
                     <?php
                     comments_template();
-                    comment_form();
+                    comment_form(customCommentForm());
                     ?>
                 </div>
                 <?php endwhile; else: ?>

@@ -7,6 +7,7 @@ jQuery(document).ready(function($) {
     });
 
     readLessMore();
+    //hideshowComments();
 
     tinymce.init({
         menubar: false,
@@ -127,6 +128,17 @@ jQuery(document).ready(function($) {
         $('a.view-less').click(function () {
             $(this).closest('.listposts').find('.content').hide();
             $(this).closest('.listposts').find('.excerpt').show();
+            return false;
+        });
+    }
+
+    function hideshowComments() {
+        $('#commentform').hide();
+        $('#comments-btn').click(function () {
+
+            $('#commentform').is(":visible") ?
+                $('#commentform').hide() :
+                $('#commentform').show();
             return false;
         });
     }
